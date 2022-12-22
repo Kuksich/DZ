@@ -1,11 +1,13 @@
-import os 
+import os
+  
 os.chdir(r'D:\DZ_py\DZ6\№2')    #Пришлось вручную назначить директорию работы
-f = open("input.txt", 'r')
+
+f = open("input.txt", 'r')    #Открываем файл и считываем с него набор чисел - коэффицитов
 coef = f.read()
 f.close()
-coef = coef.split("|")
+coef = coef.split("|")  #Преобразуем набор чисел в список. В текстовом документе числа разделяются знаком "|"
 print(coef)
-ch = min(int(coef[0]) // 2, int(coef[1]) // 6, int(coef[2]))    
-f = open('output.txt', 'w')
+ch = min(int(coef[0]) // 2, int(coef[1]) // 6, int(coef[2]))    #Находим минимальное частное, для выявления минимального числа атомов спирта   
+f = open('output.txt', 'w')    #Открываем файл, для последующего занесения в него числа атомов спирта
 print(ch)
 f.write(str(ch))
