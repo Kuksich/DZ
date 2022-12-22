@@ -1,25 +1,29 @@
 import math
+
 print("Введите коэффициенты для квадратного уравнения вида ax^2+bx+c=0: ")
-print("a = ") 
-a = float(input()) 
-print("b = ")
-b = float(input()) 
-print("c = ")
-c = float(input())
+
+a = float(input("a = ")) 
+b = float(input("b = ")) 
+c = float(input("c = "))
+
+#Пройдемся по коэффициентам, проверим, не равен ли какой-нибудь из них нулю
+
 if a == 0:
     x = -c/b
     print("Корень уравнения: ")
-    print("x = ", x)
+    print(f"x = {x}")
     exit()
+    
 if c == 0:
     x1 = 0
     x2 = -b/a
     print("Корни уравнения:")
-    print("x1 = ", x1)
-    print("x2 = ", x2)
+    print(f"x1 = {x1}")
+    print(f"x2 = {x2}")
     if x2 == -b:
-        print("x3 = ", -x2)
+        print(f"x3 = {-x2}")
     exit()
+    
 if b == 0:
     if a > 1:
         c /= a
@@ -29,24 +33,30 @@ if b == 0:
     if c < 0:
         x = math.sqrt(-c)
     print("Корни уравнения: ")
-    print("x1 = ", x)
-    print("x2 = ", -x)
+    print(f"x1 = {x}")
+    print(f"x2 = {-x}")
     exit()
+    
+#В случае, если все коэффициенты отличны от нуля, решим уравнение через дискриминант  
+ 
 d = b**2 - 4*a*c
 print("Дискриминант равен", d)
+
 if d > 0:
-    x1 = ((-b + math.sqrt(d))/(2*a))
-    x2 = ((-b - math.sqrt(d))/(2*a))
+    x1 = ((-b + math.sqrt(d)) / (2*a))
+    x2 = ((-b - math.sqrt(d)) / (2*a))
     print("Корни уравнения: ")
-    print("x1 = ", x1)
-    print("x2 = ", x2)
+    print(f"x1 = {x1}")
+    print(f"x2 = {x2}")
+    
 elif d == 0:
-    x = -b/(2*a)
+    x = -b / (2*a)
     print("Корень уравнения: ")
-    print("x = ", x)
+    print(f"x = {x}")
+    
 elif d < 0:
-    k = complex(-b/2, math.sqrt(-d)/2)
-    k1 = complex(-b/2, -math.sqrt(-d)/2)
+    k = complex(-b/2, math.sqrt(-d) / (2*a))
+    k1 = complex(-b/2, -math.sqrt(-d) / (2*a))
     print("Корни уравнения:")
-    print("x1 = ", k1) 
-    print("x2 = ", k)
+    print(f"x1 = {k1}") 
+    print(f"x2 = {k}")
