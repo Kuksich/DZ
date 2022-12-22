@@ -1,3 +1,6 @@
 import math
-r = int(input())
-print (math.pi*r**2)
+try:
+    r = int(input())
+except ValueError:
+    print("Введите число")
+print (math.pi * r**2)
