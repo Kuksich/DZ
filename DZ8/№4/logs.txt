@@ -1,0 +1,4 @@
+Function started
+Function received 51231235235235 and 123123
+Function ended, result is 25230973503471355620
+Worktime of function is 0:00:00.000632
