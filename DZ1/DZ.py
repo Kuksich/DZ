@@ -1,8 +1,5 @@
-d = int(input())
-res = ''
+def sum(a, b):
+    return a + b
 
-while d > 0:
-    res = str(d % 2) + res
-    d //= 2
-
-print(res)
+c = sum(12, 14)
+print(c)
